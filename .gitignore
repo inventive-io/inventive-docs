@@ -1,8 +1,5 @@
-public/
 .DS_Store
-client/dist/
-client/user/
-coverage/
-lib/
-node_modules/
-client/tmp/
+/dist/
+/bower_components/
+/node_modules/
+/tmp/
