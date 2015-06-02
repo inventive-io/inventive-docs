@@ -9,6 +9,10 @@
   },
   "bugs": "https://github.com/inventive-io/inventive-docs/issues",
   "dependencies": {},
+  "scripts": {
+      "build": "gulp",
+      "start": "http-server ./dist/ 3000"
+  },
   "devDependencies": {
     "chai": "^2.3.0",
     "chalk": "^1.0.0",
