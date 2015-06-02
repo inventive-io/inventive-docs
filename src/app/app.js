@@ -1,18 +1,21 @@
 (function () {
     'use strict';
 
-    function config($stateProvider) {
+    function config($stateProvider, $urlRouterProvider) {
+        // For any unmatched url, redirect to home
+        $urlRouterProvider.otherwise("/");
+
         // States
         $stateProvider
             .state('home', {
                 url: '/',
-                views: {
-                    'content@': {
-                        template: '<h1>Hello world</h1>'
-                    }
+                controller: function() {
+                    console.log('Hello world');
                 },
+                controllerAs: 'vm',
+                template: '<h1>Hello world</h1>',
                 data: {
-                    pageTitle: 'Inventive Docs'
+                    pageTitle: 'Inventive'
                 }
             });
     }
@@ -35,7 +38,7 @@
             'app.core',
             'app.components'
         ])
-        .config(['$stateProvider', config])
+        .config(['$stateProvider', '$urlRouterProvider', config])
         .controller('AppController', ['$scope', AppController]);
 
 }());
